@@ -1,0 +1,107 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "http://example.com/product.schema.json",
+    "title": "Grocerry Store Food",
+    "description": "Some fresh products available in the store",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "title": {
+                "description": "Name of the product",
+                "type": "string"
+            },
+            "type": {
+                "description": "Type of product.Is it vegetable, fruit or something else?",
+                "type": "string"
+            },
+            "description": {
+                "description": "Description of product and its ingredients",
+                "type": "string"
+            },
+            "filename": {
+                "description": "Name of the product's photo file",
+                "type": "string"
+            },
+            "height": {
+                "type": "number",
+                "minimum": 0
+            },
+            "width": {
+                "type": "number",
+                "minimum": 0
+            },
+            "price": {
+                "type": "number",
+                "exclusiveMinimum": 0
+            },
+            "rating": {
+                "type": "number",
+                "maximum": 10,
+                "minimum": 0
+            },
+            "ingredients": {
+                "description": "Different Ingredients which makes the product",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+            },
+            "relatedProducts": {
+                "description": "An object array which stores the related products",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "title": {
+                            "description": "Name of the product",
+                            "type": "string"
+                        },
+                        "type": {
+                            "description": "Type of product.Is it vegetable, fruit or something else?",
+                            "type": "string"
+                        },
+                        "description": {
+                            "description": "Description of product and its ingredients",
+                            "type": "string"
+                        },
+                        "filename": {
+                            "description": "Name of the product's photo file",
+                            "type": "string"
+                        },
+                        "height": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "width": {
+                            "type": "number",
+                            "minimum": 0
+                        },
+                        "price": {
+                            "type": "number",
+                            "exclusiveMinimum": 0
+                        },
+                        "rating": {
+                            "type": "number",
+                            "maximum": 10,
+                            "minimum": 0
+                        }
+                    },
+                    "required": [
+                        "title",
+                        "type",
+                        "description",
+                        "filename",
+                        "height",
+                        "width",
+                        "price",
+                        "rating"
+                    ]
+                },
+                "uniqueItems": true
+            }
+        }
+    }
+}   

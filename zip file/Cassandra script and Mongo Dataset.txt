@@ -1,0 +1,315 @@
+-----------------------------------------------------------------------------------------------------------------------
+---------------------------------------Apache Cassandra script for data insertion--------------------------------------
+BEGIN BATCH
+INSERT INTO books (bookId, title, authors, rating, language )
+VALUES (1,'Harry Potter and the Half-Blood Prince','J.K. Rowling/Mary GrandPré',4.57,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (2,'Harry Potter and the Order of the Phoenix','J.K. Rowling/Mary GrandPré',4.49,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (3,'Harry Potter and the Chamber of Secrets','J.K. Rowling/Mary GrandPré',4.42,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (4,'Harry Potter and the Prisoner of Azkaban','J.K. Rowling/Mary GrandPré',4.56,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (5,'Harry Potter Boxed Set Books 1-5','J.K. Rowling/Mary GrandPré',4.78,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (6,'Unauthorized Harry Potter Book Seven News: Half-Blood Prince Analysis and Speculation','W. Frederick Zimmerman',3.74,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (7,'A Short History of Nearly Everything','Bill Bryson',4.21,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (8,'Bill Bryson's African Diary','Bill Bryson',3.44,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (9,'In a Sunburned Country','Bill Bryson',4.07,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (10,'The Lost Continent: Travels in Small Town America','Bill Bryson',3.83,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (11,'The Changeling Sea','Patricia A. McKillip',4.06,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (12,'The Changeling','Zilpha Keatley Snyder',4.17,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (13,'Artesia: Adventures in the Known World','Mark Smylie',4.13,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (14,'Uncommon Carriers','John McPhee',3.95,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (15,'Heirs of General Practice','John McPhee',4.17,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (16,'The Control of Nature','John McPhee',4.24,english);
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (17,'Coming Into the Country','John McPhee',4.22,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (18,'La Place de la Concorde Suisse','John McPhee',3.92,'french');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (19,'The Road to Dune','Frank Herbert',3.88,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (20,'Anna Karenina','Leo Tolstoy,Richard Pevear/Larissa Volokhonsky',4.05,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (21,'Dinner with Anna Karenina','Gloria Goldreich',2.99,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (22,'Untouchable','Mulk Raj Anand,E.M. Forster',3.71,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (23,'Lonely Planet Londres','Lonely Planet,Sarah Johnstone/Tom Masters',4.03,'spanish');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (24,'The Untouchable','John Banville',3.95,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (25,'Wrinkles in Time','George Smoot,Keay Davidson',4.01,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (26,'Miami Blues','Charles Willeford/Elmore Leonard',3.94,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (27,'Cien años de soledad','Gabriel García Márquez',4.07,'spanish');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (28,'On Beyond Zebra!','Dr. Seuss',4.04,'english');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (29,'Timbuktu , Leviathan , Moon Palace','Paul Auster',4.38,'french');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (30,'Crónica de una muerte anunciada','Gabriel García Márquez',3.97,'spanish');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (31,'Cien anos de soledad','Gabriel Garcia Marquez',4.07,'spanish');
+INSERT INTO books (bookId, title, authors, rating, language)
+VALUES (32,'Le Réseau Kinakuta','Neal Stephenson',4.10,'french');
+APPLY BATCH;
+
+
+
+------------------------------------------------------------------------------------------------------------------
+-----------------------------MongoDB Dataset-------------------------------------------------------
+[    {
+      "type":"Team",
+      "name":"Manchester United FC",
+      "code":"MUN",
+      "country":"England",
+      "league":"Premier League clubs"
+    },
+    {
+      "type": "Team",
+      "name": "Manchester City FC",
+      "code": "MCI",
+      "country": "England",
+      "league": "Premier League clubs",
+      "goals_scored": 127
+    },
+    {
+      "type": "Team",
+      "name": "Arsenal FC",
+      "code": "ARS",
+      "league": "Premier League clubs"
+    },
+    {
+      "type": "Team",
+      "name": "Crystal Palace FC",
+      "league": "Premier League clubs",
+      "goals_scored": 58
+    },
+    {
+      "type": "Team",
+      "name": "Southampton FC",
+      "code": "SOU",
+      "country": "England",
+      "league": "Premier League clubs",
+      "goals_scored": 77
+    }, 
+    {
+      "type": "Team",
+      "name": "Chelsea FC",
+      "code": "CHE",
+      "country": "England",
+      "league": "Premier League clubs",
+      "goals_scored": 121,
+      "matches_against":[
+               {
+                "name": "FC Lugano",
+                "code": "LUG",
+                "country": "Switzerland"
+              },
+              {
+                "name": "FC Luzern",
+                "code": "LUZ",
+                "country": "Switzerland"
+              },
+              {
+                "name": "BSC Young Boys",
+                "code": "YB",
+                "country": "Switzerland"
+              },
+              {
+                "name": "FC Zürich",
+                "code": "FCZ",
+                "country": "Switzerland"
+              }      
+                       ]
+    }
+,
+    {
+      "type": "Match",
+      "round": "Matchday 1",
+      "date": "2020-09-12",
+      "team1": "Burnley FC",
+      "team2": "Manchester United FC"
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 2",
+      "date": "2020-09-13",
+      "team1": "Manchester City FC",
+      "team2": "Aston Villa FC"
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 3",
+      "date": "2020-09-14",
+      "team1": "Fulham FC",
+      "team2": "Arsenal FC",     
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 4",
+      "date": "2020-09-15",
+      "team1": "Crystal Palace FC",
+      "team2": "Southampton FC",
+      "score": {
+        "ft": [
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 5",
+      "date": "2020-09-16",
+      "team1": "Liverpool FC",
+      "team2": "Leeds United FC",
+      "score": {
+        "ft": [
+          4,
+          3
+        ]
+      }
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 6",
+      "date": "2020-09-17",
+      "team1": "West Ham United FC",
+      "team2": "Newcastle United FC",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 7",
+      "date": "2020-09-18",
+      "team1": "West Bromwich Albion FC",
+      "team2": "Leicester City FC",
+      "score": {
+        "ft": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 8",
+      "date": "2020-09-19",
+      "team1": "Tottenham Hotspur FC",
+      "team2": "Everton FC",
+      "score": {
+        "ft": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "type": "Match",
+      "round": "Matchday 9",
+      "date": "2020-09-20",
+      "team1": "Sheffield United FC",
+      "team2": "Wolverhampton Wanderers FC",
+      "team3": "Referee FC",
+      "score": {
+        "ft": [
+          0,
+          2
+        ]
+      }
+    },
+
+    {
+      "type": "Post",
+      "status": "Success is not final, failure is not fatal: it is the courage to continue that counts",
+      "username": "abc",
+      "date": "2021-12-12", 
+      "likes": 44 ,
+      "comments": [
+              { "user":" ab1",
+                body: "continue doing the same thing?"
+              },
+              { "user":" ab2",
+                body: "my dog died"
+              }
+              ],
+      "hidden": 0
+    },
+
+    {
+      "type": "Post",
+      "status": "Never bend your head. Always hold it high. Look the world straight in the eye",
+      "username": "",
+      "datetime": "2021-12-12", 
+      "likes": 32 ,
+      "comments": [
+              { "user":" ab3",
+                body: "bending your head makes you dizzy anyway"
+              }
+              ],
+      "hidden": 0
+    },
+    {
+      "type": "Post",
+      "status": "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+      "username": "creepysingh",
+      "datetime": "2021-12-12", 
+      "likes": 0,
+      "comments": [
+              { "user":" ab1",
+                body: "you dont know whats important!"
+              },
+              { "user":" ab2",
+                body: "I said my dog died"
+              }
+              ],
+      "hidden": 1
+    },
+    {
+      "type": "Post",
+      "status": "When you have a dream, you've got to grab it and never let go!!!!!!!! XOXO",
+      "username": "2021-12-12",
+      "datetime": "2021-12-12", 
+      "likes": 34,
+      "comments": [
+              { "user":" abc1",
+                body: "loooser!"
+              },
+              { "user":" abc2",
+                body: "true af ma lady"
+              },
+              { "user":" abc3",
+                body: "what is love?"
+              }
+              ],
+      "hidden": 0
+    },
+    {
+      "type": "Post",
+      "status": "Everyone needs to keep their shit together. As you grow old, the number of people who can witness your fuckups increases, so you learn to keep it all together. Not because you are an adult, but due to the disturbing eyes on you.",
+      "username": "trabz777",
+      "datetime": "2021-12-12", 
+      "likes": 2,
+      "comments": [],
+      "hidden": 0
+    }
+]

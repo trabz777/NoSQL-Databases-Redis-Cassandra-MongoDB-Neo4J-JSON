@@ -1,0 +1,182 @@
+-------------------------------------------------------------------NODES----------------------------------------------
+CREATE 
+(:Country {name: 'Germany'}),
+(:Country {name: 'France'}),
+(:Country {name: 'Brazil'}),
+(:Country {name: 'Spain'})
+
+
+CREATE 
+(:Club {name: 'Bor. Dortmund'}),
+(:Club {name: 'FC Barcelona'}),
+(:Club {name: 'Paris SG'})
+
+
+CREATE
+(:Player {name: 'Neymar', position: 'Left Wing'}),
+(:Player {name: 'Ousmane Dembele', position: 'Left Wing'})
+
+
+CREATE 
+(:Transfer {saeson: '2016/2017', fee: 94.5}),
+(:Transfer {saeson: '2016/2017', fee: 199.8})
+
+-----------------------------------------------------------------CONSTRAINTS--------------------------------------------
+
+CREATE CONSTRAINT ON (a:Player) ASSERT a.name IS UNIQUE
+CREATE CONSTRAINT ON (a:Club) ASSERT a.name IS UNIQUE
+CREATE CONSTRAINT ON (a:Country) ASSERT a.name IS UNIQUE
+
+----------------------------------------------------------------RELATIONSHIPS-------------------------------------------
+-------------------------------------------------------
+------------PART_OF------------------------------------
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'Bor. Dortmund' AND b.name = 'Germany'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'FC Barcelona' AND b.name = 'Spain'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'Paris SG' AND b.name = 'France'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+-------------------------------------------------------
+------------PLAYS_FOR----------------------------------
+MATCH (a:Player), (b:Country)
+WHERE a.name = 'Ousmane Dembele' AND b.name = 'France'
+CREATE (a)-[r:PLAYS_FOR]->(b)
+RETURN r
+
+MATCH (a:Player), (b:Country)
+WHERE a.name = 'Neymar' AND b.name = 'Brazil'
+CREATE (a)-[r:PLAYS_FOR]->(b)
+RETURN r
+
+-------------------------------------------------------
+--------------FROM_CLUB-------------------------------- 
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 94.5 AND b.name = 'Bor. Dortmund'
+CREATE (a)-[r:FROM_CLUB]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 199.8 AND b.name = 'FC Barcelona'
+CREATE (a)-[r:FROM_CLUB]->(b)
+RETURN r
+
+-------------------------------------------------------
+--------------TO_CLUB-------------------------------- 
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 94.5 AND b.name = 'FC Barcelona'
+CREATE (a)-[r:TO_CLUB]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 199.8 AND b.name = 'Paris SG'
+CREATE (a)-[r:TO_CLUB]->(b)
+RETURN r
+
+-------------------------------------------------------
+--------------OF_PLAYER-------------------------------- 
+MATCH (a:Transfer), (b:Player)
+WHERE a.fee = 94.5 AND b.name = 'Ousmane Dembele'
+CREATE (a)-[r:OF_PLAYER {age: 20}]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Player)
+WHERE a.fee = 199.8 AND b.name = 'Neymar'
+CREATE (a)-[r:OF_PLAYER {age: 25}]->(b)
+RETURN r
+-----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------ADDITION OF MORE DATA----------------------------------------------
+
+CREATE 
+(:Country {name: 'England'}),
+(:Country {name: 'Portugal'}),
+(:Country {name: 'Netherlands'}),
+(:Country {name: 'Agentina'})
+
+
+CREATE 
+(:Club {name: 'Arsenal'}),
+(:Club {name: 'FC Bayern'}),
+(:Club {name: 'FC Porto'})
+
+
+CREATE
+(:Player {name: 'Van Persie', position: 'Striker'}),
+(:Player {name: 'Sancho', position: 'Left Wing'})
+
+
+CREATE 
+(:Transfer {saeson: '2017/2018', fee: 50}),
+(:Transfer {saeson: '2018/2019', fee: 20})
+
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'FC Porto' AND b.name = 'Portugal'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'FC Bayern' AND b.name = 'Germany'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+MATCH (a:Club), (b:Country)
+WHERE a.name = 'Arsenal' AND b.name = 'England'
+CREATE (a)-[r:PART_OF]->(b)
+RETURN r
+
+MATCH (a:Player), (b:Country)
+WHERE a.name = 'Sancho' AND b.name = 'Brazil'
+CREATE (a)-[r:PLAYS_FOR]->(b)
+RETURN r
+
+MATCH (a:Player), (b:Country)
+WHERE a.name = 'Van Persie' AND b.name = 'Netherlands'
+CREATE (a)-[r:PLAYS_FOR]->(b)
+RETURN r
+
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 50 AND b.name = 'FC Porto'
+CREATE (a)-[r:FROM_CLUB]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 20 AND b.name = 'FC Bayern'
+CREATE (a)-[r:FROM_CLUB]->(b)
+RETURN r
+
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 50 AND b.name = 'Arsenal'
+CREATE (a)-[r:TO_CLUB]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Club)
+WHERE a.fee = 20 AND b.name = 'Arsenal'
+CREATE (a)-[r:TO_CLUB]->(b)
+RETURN r
+
+
+MATCH (a:Transfer), (b:Player)
+WHERE a.fee = 20 AND b.name = 'Sancho'
+CREATE (a)-[r:OF_PLAYER {age: 19}]->(b)
+RETURN r
+
+MATCH (a:Transfer), (b:Player)
+WHERE a.fee = 199.8 AND b.name = 'Van Persie'
+CREATE (a)-[r:OF_PLAYER {age: 25}]->(b)
+RETURN r
+
+
+CREATE 
+(:Country {name: 'Russia'}),
+(:Country {name: 'USA'}),
+(:Country {name: 'Pakistan'})
