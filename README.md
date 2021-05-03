@@ -1,5 +1,5 @@
 # NoSQL-Databases-Redis-Cassandra-MongoDB-Neo4J-JSON
-This report documents the implementation of 4 major types of NoSQL databases - Key/Value pair (Redis), Column-oriented (Cassandra), Document-based (MongoDB) and Graph database (Neo4J). It also includes the implementation and validation of JSON schema against a dataset.   
+This project documents the implementation of 4 major types of NoSQL databases - Key/Value pair (Redis), Column-oriented (Cassandra), Document-based (MongoDB) and Graph database (Neo4J). It also includes the implementation and validation of JSON schema against a dataset.   
 
 The data used for each implementation has logical meaning to it, has structure and relationships between different entities. Each implementation has the data/schema creation stage and then the querying stage where im querying information from the dataset. Please read the whole report carefully to have full understanding of the implementation these common NoSQL Databases and each process involved throughout the implementation phase.
 
